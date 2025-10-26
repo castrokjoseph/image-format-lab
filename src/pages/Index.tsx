@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ImageIcon, Zap } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Header } from "@/components/Header";
 import { ImageUploader } from "@/components/ImageUploader";
 import { ImageCard } from "@/components/ImageCard";
 import { ConversionControls } from "@/components/ConversionControls";
@@ -92,31 +92,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/40 sticky top-0 bg-background/80 backdrop-blur-lg z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-center relative">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3"
-            >
-              <div className="p-2 rounded-xl bg-gradient-primary">
-                <ImageIcon className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  ImageFormatX
-                </h1>
-                <p className="text-xs text-muted-foreground">Universal Image Converter</p>
-              </div>
-            </motion.div>
-            <div className="absolute right-0">
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="py-16 px-4">
