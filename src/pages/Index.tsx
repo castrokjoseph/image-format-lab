@@ -95,11 +95,24 @@ const Index = () => {
       {/* Header */}
       <header className="border-b border-border/40 sticky top-0 bg-background/80 backdrop-blur-lg z-50">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-center relative">
+          <div className="flex items-center justify-between">
+            {/* Left - Navigation Links */}
+            <div className="flex items-center gap-6 min-w-[200px]">
+              <nav className="flex items-center gap-4">
+                <a href="#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                  Features
+                </a>
+                <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                  About
+                </a>
+              </nav>
+            </div>
+
+            {/* Center - Logo and Name */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-3 absolute left-1/2 -translate-x-1/2"
             >
               <div className="p-2 rounded-xl bg-gradient-primary">
                 <ImageIcon className="w-6 h-6 text-white" />
@@ -111,7 +124,9 @@ const Index = () => {
                 <p className="text-xs text-muted-foreground">Universal Image Converter</p>
               </div>
             </motion.div>
-            <div className="absolute right-0">
+
+            {/* Right - Theme Toggle */}
+            <div className="flex items-center min-w-[200px] justify-end">
               <ThemeToggle />
             </div>
           </div>
