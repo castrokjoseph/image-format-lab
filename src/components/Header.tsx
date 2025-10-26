@@ -16,28 +16,9 @@ export const Header = () => {
   return (
     <header className="border-b border-border/40 sticky top-0 bg-background/80 backdrop-blur-lg z-50">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3"
-            >
-              <div className="p-2 rounded-xl bg-gradient-primary">
-                <ImageIcon className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  ImageFormatX
-                </h1>
-                <p className="text-xs text-muted-foreground">Universal Image Converter</p>
-              </div>
-            </motion.div>
-          </Link>
-
-          {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6">
+        <div className="flex items-center justify-between relative">
+          {/* Left - Navigation Links */}
+          <nav className="hidden md:flex items-center gap-6 min-w-[200px]">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -62,7 +43,7 @@ export const Header = () => {
           </nav>
 
           {/* Mobile Navigation */}
-          <nav className="md:hidden flex items-center gap-4">
+          <nav className="md:hidden flex items-center gap-3 min-w-[150px]">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -79,8 +60,27 @@ export const Header = () => {
             ))}
           </nav>
 
-          {/* Theme Toggle */}
-          <div>
+          {/* Center - Logo */}
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-3"
+            >
+              <div className="p-2 rounded-xl bg-gradient-primary">
+                <ImageIcon className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                  ImageFormatX
+                </h1>
+                <p className="text-xs text-muted-foreground">Universal Image Converter</p>
+              </div>
+            </motion.div>
+          </Link>
+
+          {/* Right - Theme Toggle */}
+          <div className="flex items-center min-w-[200px] md:min-w-[200px] justify-end">
             <ThemeToggle />
           </div>
         </div>
